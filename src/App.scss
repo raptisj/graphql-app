@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+
+$customGrey: #e8e8e8;
+$customOrange: #f68b24;
+$customRed: #f46353;
+
+
+%btnStyles {
+  padding: .4rem 1rem;
+  border-radius: 50px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: .4s;
+  font-family: 'Lato', sans-serif;
+  &:hover,
+  &:focus,
+  &:active {
+   outline: 0;
+   box-shadow: none;
+ }
+}
+
+body {
+ background: $customGrey;
+ font-size: 16px;
+ min-height: 100vh;
+ font-family: 'Lato', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper__header {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  width: 100%;
+  max-width: 540px;
+
+  h1 {
+    color: #f68b24;
+    margin-bottom: 0;
+    font-size: 3rem;
+  }
+}
+
+.form {
+  background: #f68b24;
+  width: 100%;
+
+  .form__inner {
+    max-width: 540px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 0;
+  }
+
+  .form__label {
+    font-size: 22px;
+    color: $customGrey;
+    white-space: nowrap;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .form__input {
+    height: 35px;
+    border: none;
+    width: 100%;
+    margin-left: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: $customOrange;
+
+    &:hover,
+    &:focus,
+    &:active {
+     outline: 0;
+     box-shadow: none;
+   }
+ }
+
+ .form__add-btn {
+   border: none;
+   background: $customOrange;
+   border: 2px solid #fff;
+   font-size: 22px;
+   color: #fff;
+   cursor: pointer;
+   transition: .4s;
+   width: 37px;
+   height: 37px;
+
+   &:hover {
+    border-left: 2px solid $customOrange;
+    background: #fff;
+    color: $customOrange;
+    transition: .4s;
+  }
+}
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.items {
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 20px;
+  padding: 0 20px 20px 20px;
+
+  &__each {
+    background: #fff;
+    padding: 20px 20px 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px -4px #222;
+  }
+
+  &__each p {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    padding-bottom: 20px;
+  }
+}
+
+.edit__outer-btn {
+  justify-self: end;
+  align-self: end;
+}
+
+.edit__btn {
+ background: #f0f0f0;
+ border: 1px solid #f0f0f0;
+ color: #222;
+ @extend %btnStyles;
+
+ &:hover {
+   border: 1px solid $customOrange;
+   background: transparent;
+   color: $customOrange;
+   transition: .4s;
+ }
+}
+
+.delete__outer-btn {
+  justify-self: start;
+  align-self: end;
+}
+
+.delete__btn {
+  background: $customRed;
+  border: 1px solid $customRed;
+  color: #fff;
+  @extend %btnStyles;
+
+  &:hover {
+   background: darken($customRed, 5%);
+   transition: .4s;
+ }
+} 
+
+.edit__input {
+ grid-column: 1 / -1;
+ margin-top: 0;
+ margin-bottom: 1rem;
+ padding-bottom: 20px;
+ font-family: 'Lato', sans-serif;
+ border: 1px solid $customOrange;
+ border-radius: 4px;
+ padding-left: 10px;
+ font-size: 16px;
+
+ &:hover,
+ &:focus,
+ &:active {
+   outline: 0;
+   box-shadow: none;
+ }
+}
+
+.update__outer-btn {
+  justify-self: start;
+  align-self: end;
+}
+
+.update__btn {
+  background: $customOrange;
+  border: 1px solid $customOrange;
+  color: #fff;
+  @extend %btnStyles;
+
+  &:hover {
+    background: #e8760a;
+    // color: $customRed;
+    transition: .4s;
+  }
+}

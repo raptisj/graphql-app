@@ -1,7 +1,7 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
-import './App.css';
+import './App.scss';
 import Names from './Names';
 import AddNames from './Form';
 
@@ -11,14 +11,15 @@ const client = new ApolloClient({
 
 const App = () => (
 	<ApolloProvider client={client}>
-		<div className="App">
-			<header className="App-header">
-				<h1>Greetings from ...</h1>
-				<Names />
-				<AddNames />
+		<div className="wrapper">
+			<header className="wrapper__header">
+				<h1>The Famous To-Do App</h1>
+				<span>With React, GraphQL and Hasura</span>
 			</header>
+			<AddNames />
+			<Names />
 		</div>
 	</ApolloProvider>
-)
+	)
 
 export default App;

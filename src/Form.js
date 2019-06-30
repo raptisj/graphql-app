@@ -33,12 +33,14 @@ class AddNames extends Component {
 	render() {
 		const { name } = this.state
 		return (
-			<div>
+			<div className="form">
+			<div className="form__inner">
+			<label className="form__label">Add Item</label>
 			<input
 			value={name}
 			onChange={e => this.setState({ name: e.target.value })}
 			type="text"
-			placeholder="add name"
+			className="form__input"
 			/>
 			<Mutation mutation={POST_NAME}>
 			{postName => (
@@ -60,11 +62,14 @@ class AddNames extends Component {
 							});
 						}
 					})
-				}}>
-				Submit
+
+				}}
+				className="form__add-btn">
+				+
 				</button>
 				)}
 			</Mutation>
+			</div>
 			</div>
 		)
 	}

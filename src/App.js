@@ -6,7 +6,8 @@ import Names from './Names';
 import AddNames from './Form';
 
 const client = new ApolloClient({
-	uri: 'http://192.168.99.100:8080/v1alpha1/graphql',
+	// uri: 'http://192.168.99.100:8080/v1alpha1/graphql', // docker local server
+	uri: 'https://ql-endpoint.herokuapp.com/v1/graphql' 
 })
 
 const App = () => (
